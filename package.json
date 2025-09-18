@@ -1,0 +1,29 @@
+{
+  "name": "loja-back",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "nodemon --watch src --exec tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:studio": "npx prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.16.1",
+    "bcryptjs": "^3.0.2",
+    "fastify": "^5.6.0",
+    "zod": "^4.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.4.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.16.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
