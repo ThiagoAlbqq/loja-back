@@ -1,6 +1,7 @@
 import Fastify from 'fastify'
 import { ProdutoRoutes } from './routes/ProdutoRoutes'
 import { UserRoutes } from './routes/UserRoutes'
+import { EnderecoRoutes } from './routes/EnderecoRoutes'
 
 const app = Fastify({
   logger: false,
@@ -8,6 +9,7 @@ const app = Fastify({
 
 new ProdutoRoutes(app)
 new UserRoutes(app)
+new EnderecoRoutes(app)
 
 app.get('/', async () => {
   return { message: 'Hello Fastify + TS + Prisma!' }

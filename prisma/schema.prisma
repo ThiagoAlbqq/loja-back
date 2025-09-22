@@ -32,6 +32,14 @@ model Produtos {
   carrinhos ProdutosOnCarrinho[]
 }
 
+model Endereco {
+  id String @id @default(uuid())
+  cep String 
+  rua String
+  numCasa String
+  complemento String
+}
+
 model ProdutosOnCarrinho {
   carrinhoId String
   produtoId  String
