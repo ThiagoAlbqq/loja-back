@@ -12,6 +12,7 @@ model User {
   email     String     @unique
   password  String
   Carrinhos Carrinho[]
+  endereco  Endereco[]
 
   @@map("user")
 }
@@ -33,11 +34,13 @@ model Produtos {
 }
 
 model Endereco {
-  id String @id @default(uuid())
-  cep String 
-  rua String
-  numCasa String
+  id          String @id @default(uuid())
+  cep         String
+  rua         String
+  numCasa     String
   complemento String
+  userId      String
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model ProdutosOnCarrinho {

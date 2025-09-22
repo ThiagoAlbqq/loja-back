@@ -1,4 +1,5 @@
 import { FastifyInstance } from "fastify"
+import { EnderecoController } from "../controllers/EnderecoController"
 
 export class EnderecoRoutes {
 
@@ -13,6 +14,8 @@ export class EnderecoRoutes {
 
     private registerRoutes() {
         this.app.post('/endereco', this.controller.post)
+        this.app.get('/endereco', this.controller.getAll)
+        this.app.delete('/endereco', this.controller.delete)
     }
 
 }

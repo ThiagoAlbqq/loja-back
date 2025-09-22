@@ -9,4 +9,4 @@ export const ReqCreateEnderecoDTO = z.object({
 })
 
 // Criando o tipo
-export type ReqCreateEnderecoDTOype = z.infer<typeof ReqCreateEnderecoDTO>
+export type ReqCreateEnderecoDTOtype = z.infer<typeof ReqCreateEnderecoDTO>
