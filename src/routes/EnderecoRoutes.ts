@@ -1,5 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { EnderecoController } from '../controllers/EnderecoController'
+import { protect } from '../handlers/authHandler'
 
 export class EnderecoRoutes {
   private app: FastifyInstance
@@ -13,7 +14,7 @@ export class EnderecoRoutes {
 
   private registerRoutes() {
     this.app.post('/endereco', this.controller.post)
-    this.app.get('/endereco', this.controller.getAll)
+    this.app.get('/endereco', { preHandler: [protect] }, this.controller.getAll)
     this.app.put('/endereco', this.controller.update)
     this.app.delete('/endereco', this.controller.delete)
   }

@@ -2,14 +2,19 @@ import Fastify from 'fastify'
 import { ProdutoRoutes } from './routes/ProdutoRoutes'
 import { UserRoutes } from './routes/UserRoutes'
 import { EnderecoRoutes } from './routes/EnderecoRoutes'
+import jwt from '@fastify/jwt'
+import { AuthRoutes } from './routes/AuthRoutes'
 
 const app = Fastify({
   logger: false,
 })
 
+app.register(jwt, { secret: 'chupa-cabra' })
+
 new ProdutoRoutes(app)
 new UserRoutes(app)
 new EnderecoRoutes(app)
+new AuthRoutes(app)
 
 app.get('/', async () => {
   return { message: 'Hello Fastify + TS + Prisma!' }
